@@ -92,7 +92,7 @@ LINK_DIRECTORIES (/usr/local/lib)
 
 # 이제부터 user 코드들을 가지고 빌드하는 곳
 SET( SOURCESS 
-    ${CMAKE_SOURCE_DIR}/include/HDB_supergate.cpp
+    ${CMAKE_SOURCE_DIR}/src/HDB_supergate.cpp
     ${CMAKE_SOURCE_DIR}/src/HDB_supergate_server.cpp
     ${CMAKE_SOURCE_DIR}/src/HDB_supergate_user.cpp
     )
