@@ -69,7 +69,12 @@ ADD_COMPILE_OPTIONS ( -g -Wall )
 
 
 # 공통 헤더 파일 Include 디렉토리 (-I)
+
 INCLUDE_DIRECTORIES (${CMAKE_SOURCE_DIR}/include)
+
+
+INCLUDE_DIRECTORIES (${CMAKE_SOURCE_DIR}/include)
+
 INCLUDE_DIRECTORIES (/usr/local/include)
 
 

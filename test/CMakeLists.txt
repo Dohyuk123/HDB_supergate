@@ -97,7 +97,11 @@ SET(TEST_SOURCES ${CMAKE_SOURCE_DIR}/src/main_query_test.cpp)
 
 
 # 테스트 코드 빌드 이는 따로 파일을 만들어야 함
-ADD_EXECUTABLE(HDB_supergate_test ${TEST_SOURCES})
+ADD_EXECUTABLE(HDB_supergate_test 
+		${CMAKE_SOURCE_DIR}/../comp_lib/comparator.cpp
+		${CMAKE_SOURCE_DIR}/../comp_lib/tools.cpp
+		${TEST_SOURCES} 
+		)
 
 #TARGET_INCLUDE_DIRECTORIES(HDB_supergate_test INTERFACE ${CMAKE_SOURCE_DIR}/../lib/include/)
 

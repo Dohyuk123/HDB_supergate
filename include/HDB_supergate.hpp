@@ -14,13 +14,14 @@ using namespace NTL;
 namespace HDB_supergate_{
     void TestHello();
     
-
-    typedef const std::shared_ptr<std::vector<std::shared_ptr<Ctxt>>> Ctxt_vec;
+    typedef std::vector<Ctxt> Ctxt_vec;
+	typedef std::vector<std::vector<Ctxt>> Ctxt_mat;
     
     /* Query Type */
     enum Q_TYPE_t {
         EQ,
         LT,
+		EL,
         MIN,
         MAX
     };
@@ -31,12 +32,16 @@ namespace HDB_supergate_{
         unsigned long d;
         unsigned long m;
         unsigned long nb_primes;
-        unsigned long l;
+        unsigned long expansion_len;
         unsigned long c;
         unsigned long scale;
         unsigned long r;
     };
-    
+ 
+/*
+	p: 167, d: 3, m: 28057, nb_primes: 538, c: 3, l: 4, scale: 6, r: 1
+   */
+
     const struct BGV_param STD128_HDB{
         167,     // p
         3,     // d
@@ -50,7 +55,7 @@ namespace HDB_supergate_{
     
     const struct BGV_param TOY_HDB{
         7,     // p
-        2,     // d
+        3,     // d
         300,    // m
         200,     // nb_primes
         3,      // c
@@ -59,7 +64,7 @@ namespace HDB_supergate_{
         1,      // r
     };
     
-    Context MakeBGVContext(int p, int d, int m, int nb_primes, int c, int l, int scale, int r);
+    Context MakeBGVContext(int p, int d, int m, int nb_primes, int c, int expansion_len, int scale, int r);
  
     Context MakeBGVContext(const struct BGV_param);
 

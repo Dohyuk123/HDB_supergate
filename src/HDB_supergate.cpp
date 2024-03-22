@@ -16,7 +16,7 @@ namespace HDB_supergate_ {
         MIN
     };*/
     
-    Context MakeBGVContext(int p, int d, int m, int nb_primes, int c, int l, int scale, int r) {        return ContextBuilder<BGV>()
+    Context MakeBGVContext(int p, int d, int m, int nb_primes, int c, int expansion_len, int scale, int r) {        return ContextBuilder<BGV>()
                     .m(m)
                     .p(p)
                     .r(r)
